@@ -15,11 +15,14 @@ let loginPromise = (req, user) => {
 
 router.post("/login", (req, res, next) => {
 
-  passport.authenticate("local",(err, User, failureDetails) => {
+  passport.authenticate("local",(err, user, failureDetails) => {
     if (err) return res.status(500).json({ message: 'Something went wrong' })
-    if (!User) return res.status(401).json(failureDetails)
-    loginPromise(req, User)
-      .then(() => res.status(200).json(req.user))
+    if (!user) return res.status(401).json(failureDetails)
+    loginPromise(req, user)
+      .then(user => {
+        const {username, name, confirm, alergies, numberPeople, specialDiet } = user
+        res.status(200).json({username, name, confirm, alergies, numberPeople, specialDiet})
+      })
       .catch(e => res.status(500).json({ message: e.message }))
   })(req,res,next)
 })
@@ -70,18 +73,23 @@ router.post("/signup", (req, res, next) => {
   )
 })
 
-router.get("/currentuser", (req, res) => {
+router.get("/loggedin", (req, res, next) => {
   const { user } = req
-  user
-    ? res.status(200).json({ message: "OK", user })
-    : res.status(401).json({ message: "NO USER LOGGED IN" })
+  if (req.isAuthenticated()) {
+    res.status(200).json(user);
+    return
+  }
+  res.status(403).json({ message: 'Unauthorized' })
 })
 
 router.get("/logout", (req, res, err) => {
-  req.logout()
-  err
+  req.session.destroy(
+    (err) => {
+    err
     ? res.status(500).json({ message: "couldn't log out" })
     : res.status(200).json({ message: "OK" })
+    }
+  )
 })
 
 module.exports = router
