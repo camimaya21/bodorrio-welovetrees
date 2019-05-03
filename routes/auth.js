@@ -20,8 +20,8 @@ router.post("/login", (req, res, next) => {
     if (!user) return res.status(401).json(failureDetails)
     loginPromise(req, user)
       .then(user => {
-        const {username, name, confirm, alergies, numberPeople, specialDiet } = user
-        res.status(200).json({username, name, confirm, alergies, numberPeople, specialDiet})
+        const {username, name, confirm, alergies, numberPeople, specialDiet, comments } = user
+        res.status(200).json({username, name, confirm, alergies, numberPeople, specialDiet, comments})
       })
       .catch(e => res.status(500).json({ message: e.message }))
   })(req,res,next)
@@ -34,7 +34,8 @@ router.post("/signup", (req, res, next) => {
     name,
     numberPeople,
     alergies,
-    specialDiet
+    specialDiet,
+    comments
   } = req.body
 
   const role = "guest"
@@ -59,7 +60,8 @@ router.post("/signup", (req, res, next) => {
         name,
         numberPeople,
         alergies,
-        specialDiet
+        specialDiet,
+        comments
       })
 
       newUser.save()

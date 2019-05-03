@@ -10,7 +10,7 @@ const userSchema = new Schema({
   numberPeople: {type: Number, default: 1},
   alergies: {type: String, default:'no'},
   specialDiet: {type: String, enum: ['no', 'vegan', 'vegetarian', 'celiaco', 'paleo']},
-  coments: {type: String}
+  comments: {type: String}
 }, {
   timestamps: {
     createdAt: 'created_at',

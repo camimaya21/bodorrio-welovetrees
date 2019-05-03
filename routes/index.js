@@ -7,14 +7,15 @@ router.get('/', (req, res, next) => {
   res.status(200).json({message: 'welcome to the bodorrio'})
 })
 
-// router.post('/form', (req, res, err) => {
-//   const {username, confirm, numberPeople, alergies, specialDiet} = req.body
+router.post('/form', (req, res, next) => {
+  const {id, confirm, numberPeople, alergies, specialDiet, comments} = req.body
 
-//   User.findByIdAndUpdate(id, {
+  User.findOneAndUpdate({ _id: id }, { confirm, numberPeople, alergies, specialDiet, comments} ).then( userUpdated =>{
+    res.status(200).json(userUpdated)
+  }).catch(err => {
+    res.status(500).json(err)
+  })
 
-
-//   })
-
-// })
+})
 
 module.exports = router
