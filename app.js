@@ -35,15 +35,15 @@ const app = express()
 // Middleware Setup
 const whitelist = [
   'http://localhost:3000',
-];
+]
 const corsOptions = {
   origin: function(origin, callback){
-      var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-      callback(null, originIsWhitelisted);
+      var originIsWhitelisted = whitelist.indexOf(origin) !== -1
+      callback(null, originIsWhitelisted)
   },
   credentials: true
-};
-app.use(cors(corsOptions));
+}
+app.use(cors(corsOptions))
 
 app.use(logger("dev"))
 app.use(bodyParser.json())
@@ -58,7 +58,7 @@ app.use(
     dest: path.join(__dirname, "public"),
     sourceMap: true
   })
-);
+)
 
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "hbs")
