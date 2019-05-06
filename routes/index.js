@@ -11,9 +11,9 @@ router.post('/form', (req, res, next) => {
   const {id, confirm, numberPeople, alergies, specialDiet, comments} = req.body
 
   User.findOneAndUpdate({ _id: id }, { confirm, numberPeople, alergies, specialDiet, comments} ).then( userUpdated =>{
-    res.status(200).json(userUpdated)
+   return res.status(200).json(userUpdated)
   }).catch(err => {
-    res.status(500).json(err)
+    return res.status(500).json(err)
   })
 
 })

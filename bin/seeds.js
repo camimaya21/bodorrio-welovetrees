@@ -3,11 +3,11 @@
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
 
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const mongoose = require("mongoose")
+const bcrypt = require("bcrypt")
+const User = require("../models/User")
 
-const bcryptSalt = 10;
+const bcryptSalt = 10
 
 mongoose
   .connect('mongodb://localhost/server', {useNewUrlParser: true})
@@ -16,7 +16,7 @@ mongoose
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
-  });
+  })
 
 let users = [
   {
@@ -34,8 +34,8 @@ User.deleteMany()
   return User.create(users)
 })
 .then(usersCreated => {
-  console.log(`${usersCreated.length} users created with the following id:`);
-  console.log(usersCreated.map(u => u._id));
+  console.log(`${usersCreated.length} users created with the following id:`)
+  console.log(usersCreated.map(u => u._id))
 })
 .then(() => {
   // Close properly the connection to Mongoose
