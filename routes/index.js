@@ -8,10 +8,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/form', (req, res, next) => {
-  const {id, confirm, numberPeople, alergies, specialDiet, comments} = req.body
+  const {confirm, numberPeople, alergies, specialDiet, comments} = req.body
+  const { _id} = req.user
 
-  User.findOneAndUpdate({ _id: id }, { confirm, numberPeople, alergies, specialDiet, comments} ).then( userUpdated =>{
-   return res.status(200).json(userUpdated)
+  User.findOneAndUpdate({ _id }, { confirm, numberPeople, alergies, specialDiet, comments} ).then( userUpdated =>{
+    return res.status(200).json(userUpdated)
   }).catch(err => {
     return res.status(500).json(err)
   })
