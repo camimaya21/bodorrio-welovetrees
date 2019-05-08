@@ -6,7 +6,7 @@
     "start": "node ./api/bin/www",
     "dev": "DEBUG=server:* nodemon ./api/bin/www",
     "dev-windows": "nodemon ./api/bin/www",
-    "netlify-prebuild": "./build.sh"
+    "netlify-build": "./build.sh"
   },
   "engines": {
     "node": "9.4.0"
