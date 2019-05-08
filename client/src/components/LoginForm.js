@@ -48,7 +48,7 @@ class LoginForm extends Component {
 
           <input
             className="login-input"
-            placeholder="Pon tu email aquí..."
+            placeholder="Pon tu usuario aquí..."
             value={username}
             onChange={e => this.setState({ username: e.target.value })}
           />
