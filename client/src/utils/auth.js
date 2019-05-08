@@ -25,7 +25,7 @@ class AuthAPI {
 
     static logout(){
         return request.get('/auth/logout')
-        .then(() => console.log('logout'))
+        .then(() => console.log('logout bye'))
         .catch(AuthAPI.errorHandle)
     }
 
