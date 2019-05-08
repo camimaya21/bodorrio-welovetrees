@@ -6,10 +6,10 @@
     "start": "node ./api/bin/www",
     "dev": "DEBUG=server:* nodemon ./api/bin/www",
     "dev-windows": "nodemon ./api/bin/www",
-    "netlify-build": "./build.sh"
+    "build": "./build.sh"
   },
   "engines": {
-    "node": "9.4.0"
+    "node": "10.15.3"
   },
   "dependencies": {
     "bcrypt": "^3.0.0",
