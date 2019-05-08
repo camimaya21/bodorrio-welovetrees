@@ -40,10 +40,23 @@
     color: #000000;
 }
 
+.login-error {
+    background-color: rgb(252, 200, 200);
+}
+
+.login-error-text {
+    color: darkslateblue;
+    font-weight: 600;
+}
+
 .login-details {
     font-size: 14px;
     line-height: 16px;
     display: flex;
     align-items: center;
     padding: 2% 0;
+}
+
+.disable {
+    cursor: not-allowed;
 }
