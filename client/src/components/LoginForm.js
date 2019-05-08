@@ -21,9 +21,9 @@ class LoginForm extends Component {
     const { username, password } = this.state;
     const { updateUser, history, isLogged } = this.props;
 
-    username && password ? (
+    username.length && password.length ? (
 
-      AuthAPI.login(username.length, password.length)
+      AuthAPI.login(username, password)
         .then(user => {
           updateUser(user);
           isLogged();
