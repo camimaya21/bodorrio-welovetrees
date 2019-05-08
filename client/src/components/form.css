@@ -1,0 +1,28 @@
+.form-wrapper {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 0 3%;
+    font-size: 13px;
+}
+
+.form-item {
+    padding: 10px 0;
+} 
+
+.form-item h4 {
+    font-weight: 500;
+}
+
+.form-radio label:last-child {
+    margin-left: 10%;
+}
+
+.nes-input, .nes-textarea {
+    border-image-width: 1;
+}
+
+.nes-input {
+    padding: 0;
+    margin: 0;
+}
