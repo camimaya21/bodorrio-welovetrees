@@ -41,7 +41,7 @@ class Form extends Component {
 
   render() {
     const { user } = this.props
-
+console.log(user)
     return (
       <div className="section-wrapper">
         <section className="info-wrapper">
@@ -51,7 +51,7 @@ class Form extends Component {
               🎟️
             </span>{" "}
           </h2>
-          <h1 className="title">Entonces... {user.user.name}</h1>
+          <h1 className="title">Entonces... {user ? user.user.name : '' }</h1>
         </section>
         <form className="form-wrapper" ref={this.form} onSubmit={(e) => this.confirm(e)}>
           <div className="form-item">

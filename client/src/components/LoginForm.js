@@ -25,7 +25,8 @@ class LoginForm extends Component {
 
       AuthAPI.login(username, password)
         .then(user => {
-          updateUser(user);
+          updateUser(user)
+          console.log(user)
           isLogged();
           history.push("/");
         })
