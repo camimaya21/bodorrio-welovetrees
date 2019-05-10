@@ -1,6 +1,6 @@
 .header {
-    background: transparent;
-    position: absolute;
+    background: #fff;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -91,7 +91,7 @@
   
   .hamburger-holder {
     position: absolute;
-    right: 1.6rem;
+    right: 2rem;
     top: 0;
   }
   

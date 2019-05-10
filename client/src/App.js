@@ -89,7 +89,6 @@ class App extends Component {
       ) : (
         <Route render={({ location }) => (
           <Fragment>  
-            <Header isOpen={open} toggleMenu={this.toggleMenu} logout={this.logoutAccount} />
               <RouteContainer key={location.pathname}>
                 <Switch location={location} >
                   <Route exact path="/" render={() => <LoginPage isLogged={this.userLogged}/>} key="home" />

@@ -1,4 +1,6 @@
-
+.App {
+    width: 100vw;
+}
 
 .section-wrapper {
     position: absolute;
@@ -9,6 +11,11 @@
     top: 60px;
     margin: 0 auto;
 } 
+
+.section-wrapper img {
+    width: 100%;
+    max-width: 380px;
+}
 
 .section-body {
     font-size: 14px;
@@ -35,6 +42,10 @@
     font-weight: 500;
     line-height: 30px;
     color: #000000;
+}
+
+.title-break {
+    display: block;
 }
 
 .date {

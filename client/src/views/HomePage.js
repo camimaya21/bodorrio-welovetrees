@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 class HomePage extends Component {
   render() {
     return (
       <div className="section-wrapper">
         <section className="info-wrapper">
           <h2 className="subtitle">Home</h2>
-          <h1 className="title">All you need is love<span role="img" aria-label="rainbow">
-              🌈
+          <h1 className="title">All you need is<span className="title-break" role="img" aria-label="rainbow">
+          love 🌈
             </span></h1>
         </section>
         <img alt="kiss-the-girl" src="./img/homelove.png" />
@@ -29,6 +30,11 @@ class HomePage extends Component {
               👰🏽
             </span>
           </p>
+          <div className="btn-wrapper">
+          <Link to="/form">
+            <button>> Confirmar Asistencia</button>
+          </Link>
+        </div>
         </section>
       </div>
     );
