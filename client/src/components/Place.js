@@ -9,7 +9,7 @@ class Place extends Component {
         <img alt="kiss-the-girl" src="./img/kiss-the-girl.png" />
         <section className="info-wrapper">
           <h2 className="subtitle">Lugar & Hora</h2>
-          <h1 className="title">En un lugar, cerca de Avenida de América</h1>
+          <h1 className="title">Calle Corazón de María 4</h1>
           <p className="date">Sábado, 18 de mayo de 2019</p>
         </section>
         <div className="btn-wrapper">
@@ -21,7 +21,7 @@ class Place extends Component {
           <ul className="details-list">
             <li className="details-items">
               <PlaceMark />
-              <p>Calle... (pronto os lo diremos <span role="img" aria-label="lol">😜</span>)</p>
+              <p>Calle Corazón de María 4 (metro Cartagena)</p>
             </li>
             <li className="details-items">
               <Clock />
