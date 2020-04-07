@@ -41,7 +41,7 @@ class Form extends Component {
 
   render() {
     const { user } = this.props
-console.log(user)
+
     return (
       <div className="section-wrapper">
         <section className="info-wrapper">
